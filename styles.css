@@ -1,0 +1,50 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: rgb(25, 21, 28);
+  font-family: sans-serif;
+  color: white;
+}
+
+#lava-lamp {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#lava-lamp h1 {
+  position: absolute;
+  font-size: 16vw;
+  z-index: 1;
+  word-break: keep-all;
+  mix-blend-mode: hard-light;
+  margin: 10px;
+  align-self: center;
+}
+
+#lava-lamp h1::selection {
+  background: white;
+}
+
+#Second {
+  background: white;
+  height: 100vh;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  mix-blend-mode: hard-light;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: yellow;
+}

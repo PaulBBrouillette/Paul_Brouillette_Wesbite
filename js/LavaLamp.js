@@ -11,7 +11,6 @@ const wrapper = document.getElementById("lava-lamp");
 const blobs = [];
 const numBlobs = 9;
 
-
 for (let i = 0; i < numBlobs; i++) {
     const element = document.createElement("div");
     element.className = "blob";
@@ -62,12 +61,11 @@ function animate() {
       b.opacity += b.opacitySpeed;
       if (b.opacity >= 1) {
         b.opacity = 1;
-        b.fadingIn = false; // start fading out
+        b.fadingIn = false; 
       }
     } else {
-      b.opacity -= b.opacitySpeed * 0.5; // slower fade out
+      b.opacity -= b.opacitySpeed * 0.5;
       if (b.opacity <= 0) {
-        // Respawn blob
         b.opacity = 0;
         b.fadingIn = true;
         b.x = b.radius + Math.random() * (wrapper.clientWidth - b.blobSize);

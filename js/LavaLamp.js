@@ -44,6 +44,7 @@ for (let i = 0; i < numBlobs; i++) {
 }
 
 function animate() {
+  document.body.style.overflow = 'hidden';
   for (const b of blobs) {
     b.x += b.dx;
     b.y += b.dy;

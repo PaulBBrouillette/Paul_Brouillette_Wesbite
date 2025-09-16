@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -8,32 +12,35 @@ body {
   color: white;
 }
 
+#NameSubtitle {
+  display: flex;
+  z-index: -1;
+}
+
 #lava-lamp {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 2;
 }
 
 #lava-lamp h1 {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 6vw;
-  z-index: 2;
   text-align: center;
-  width: 100vw;
+  color: white;
+  font-size: 8vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#lava-lamp h2 {
+  color: white;
 }
 
 #lava-lamp h1::selection {
-  background: white;
-}
-
-#Second {
-  background: white;
-  height: 100vh;
+  background: #9d4edd53;
 }
 
 .blob {
@@ -45,14 +52,50 @@ body {
   z-index: 0;
 }
 
-.box {
-  width: 200px;
-  height: 200px;
-  background: yellow;
+.scroll-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  background: white;
+  color: rgb(59, 41, 72);
+}
+
+.left-panel {
+  flex-shrink: 0;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 10vw;
+  font-family: sans-serif;
+  z-index: 1;
+}
+
+.right-panel {
+  flex-grow: 1;
+  width: 50%;
+  position: relative;
+  text-align: center;
+  font-size: 2vw;
+}
+
+.portfolio-item {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  font-size: 4em;
 }
 
 @media screen and (max-width: 768px) {
   #lava-lamp h1 {
-    font-size: 2em;
+    font-size: 9vw;
   }
 }

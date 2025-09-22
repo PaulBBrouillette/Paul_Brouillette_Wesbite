@@ -3,36 +3,116 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Brouillette</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <title>Four-way Panels</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="rightpanel.css"/>
 </head>
 
 <body>
-    <div id="lava-lamp">
-        <h1 id="NameHeader">Paul Brouillette</h1>
+    <div class="container" id="container">
+        <!-- Left -->
+        <div class="panel left">
+            <h2>Left Panel</h2>
+            <p>Lots of scrollable left content...</p>
+            <button onclick="goHome()">⬅ Back Home</button>
+        </div>
+
+        <!-- Top -->
+        <div class="panel top">
+            <h2>Top Panel</h2>
+            <p>Scrollable top content...</p>
+            <button onclick="goHome()">⬅ Back Home</button>
+        </div>
+
+        <!-- Home -->
+        <div class="panel home">
+            <h1>Paul Brouillette</h1>
+            <button onclick="goLeft()">⬅ Go Left</button>
+            <button onclick="goTop()">⬆ Go Top</button>
+            <button onclick="goRight()">Go Right ➡</button>
+            <button onclick="goBottom()">⬇ Go Bottom</button>
+        </div>
+
+        <!-- Right -->
+        <div class="panel right">
+            <h2>Right Panel</h2>
+            <p>Scrollable right content...</p>
+            <div id="PhotoGallery">
+                <div class="vertical">
+                    <img src="images/1.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/4.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/5.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/6.jpg">
+                </div>
+                <div class="vertical">
+                    <img src="images/2.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/7.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/8.jpg">
+                </div>
+                <div class="vertical">
+                    <img src="images/9.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/10.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/11.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/12.jpg">
+                </div>
+                <div class="vertical">
+                    <img src="images/13.jpg">
+                </div>
+            </div>
+            <button onclick="goHome()">⬅ Back Home</button>
+        </div>
+
+        <!-- Bottom -->
+        <div class="panel bottom">
+            <h2>Bottom Panel</h2>
+            <p>Scrollable bottom content...</p>
+            <button onclick="goHome()">⬅ Back Home</button>
+        </div>
     </div>
-    <section class="scroll-container">
-        <div class="left-panel">
-            <h2>I am a</h2>
-        </div>
-        <div class="right-panel">
-            <div class="portfolio-item">Software Engineer</div>
-            <div class="portfolio-item">Photographer</div>
-            <div class="portfolio-item">Web Developer</div>
-            <div class="portfolio-item">Blood Donor</div>
-            <div class="portfolio-item"></div>
-        </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="js/LavaLamp.js"></script>
-    <script src="js/TextAnimation.js"></script>
-    <script src="js/scrolltest.js"></script>
+
+    <script>
+        const container = document.getElementById("container");
+
+        window.addEventListener("load", () => {
+            container.classList.add("transition");
+        });
+
+        function goHome() {
+            container.style.transform = "translate(-100vw, -100vh)";
+        }
+
+        function goLeft() {
+            container.style.transform = "translate(0, -100vh)";
+        }
+
+        function goRight() {
+            container.style.transform = "translate(-200vw, -100vh)";
+        }
+
+        function goTop() {
+            container.style.transform = "translate(-100vw, 0)";
+        }
+
+        function goBottom() {
+            container.style.transform = "translate(-100vw, -200vh)";
+        }
+    </script>
 </body>
 
 </html>

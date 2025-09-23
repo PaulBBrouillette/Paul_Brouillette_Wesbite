@@ -28,3 +28,8 @@
 .horizontal {
     grid-column: span 2;
 }
+
+#PhotoGallery img.contain {
+  object-fit: contain;
+  background: #000;
+}

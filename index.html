@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Four-way Panels</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="rightpanel.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Paul Brouillette</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="rightpanel.css" />
 </head>
 
 <body>
@@ -112,6 +113,12 @@
         function goBottom() {
             container.style.transform = "translate(-100vw, -200vh)";
         }
+
+        document.querySelectorAll("#PhotoGallery img").forEach(img => {
+            img.addEventListener("click", () => {
+                img.classList.toggle("contain");
+            });
+        });
     </script>
 </body>
 

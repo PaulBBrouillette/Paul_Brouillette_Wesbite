@@ -36,7 +36,7 @@
 
         <!-- Right -->
         <div class="panel right">
-            <h2>Right Panel</h2>
+            <h2>Photo Gallery</h2>
             <p>Scrollable right content...</p>
             <div id="PhotoGallery">
                 <div class="vertical">
@@ -74,6 +74,15 @@
                 </div>
                 <div class="vertical">
                     <img src="images/13.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/14.jpg">
+                </div>
+                <div class="vertical">
+                    <img src="images/15.jpg">
+                </div>
+                <div class="horizontal">
+                    <img src="images/16.jpg">
                 </div>
             </div>
             <button onclick="goHome()">⬅ Back Home</button>
@@ -115,8 +124,11 @@
         }
 
         document.querySelectorAll("#PhotoGallery img").forEach(img => {
-            img.addEventListener("click", () => {
-                img.classList.toggle("contain");
+            img.addEventListener("touch", () => {
+                 img.classList.toggle("contain");
+            });
+            img.addEventListener("blur", () => {
+                img.classList.remove("contain");
             });
         });
     </script>

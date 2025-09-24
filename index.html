@@ -7,6 +7,9 @@
     <title>Paul Brouillette</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="rightpanel.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -27,11 +30,11 @@
 
         <!-- Home -->
         <div class="panel home">
-            <h1>Paul Brouillette</h1>
-            <button onclick="goLeft()">⬅ Go Left</button>
-            <button onclick="goTop()">⬆ Go Top</button>
-            <button onclick="goRight()">Go Right ➡</button>
-            <button onclick="goBottom()">⬇ Go Bottom</button>
+            <h1>Paul Brouillette's Awesome Website</h1>
+            <button onclick="goLeft()" id="ButtonLeft">⬅ Go Left</button>
+            <button onclick="goTop()" id="ButtonTop">⬆ Go Top</button>
+            <button onclick="goRight()" id="ButtonRight">Go Right ➡</button>
+            <button onclick="goBottom()" id="ButtonBottom">⬇ Go Bottom</button>
         </div>
 
         <!-- Right -->
@@ -125,7 +128,7 @@
 
         document.querySelectorAll("#PhotoGallery img").forEach(img => {
             img.addEventListener("touch", () => {
-                 img.classList.toggle("contain");
+                img.classList.toggle("contain");
             });
             img.addEventListener("blur", () => {
                 img.classList.remove("contain");

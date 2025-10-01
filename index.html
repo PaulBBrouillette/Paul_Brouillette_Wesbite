@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="rightpanel.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -30,17 +33,29 @@
 
         <!-- Home -->
         <div class="panel home">
-            <h1>Paul Brouillette's Awesome Website</h1>
-            <button onclick="goLeft()" id="ButtonLeft">⬅ Go Left</button>
-            <button onclick="goTop()" id="ButtonTop">⬆ Go Top</button>
-            <button onclick="goRight()" id="ButtonRight">Go Right ➡</button>
-            <button onclick="goBottom()" id="ButtonBottom">⬇ Go Bottom</button>
+            <div id="HomeContent">
+                <button onclick="goLeft()" id="ButtonLeft">My work</button>
+                <div id="HomeContentRow">
+                    <button onclick="goTop()" id="ButtonTop">About me</button>
+                    <h1 id="HomeHeader">Paul Brouillette's Awesome Website</h1>
+                    <button onclick="goBottom()" id="ButtonBottom">Contact</button>
+                </div>
+                <button onclick="goRight()" id="ButtonRight">Photo Gallery</button>
+            </div>
         </div>
 
         <!-- Right -->
         <div class="panel right">
             <h2>Photo Gallery</h2>
-            <p>Scrollable right content...</p>
+            <p id="PhotoParagraph">
+                I've always had a passion for photography and decided in the Summer of 2024 to pull my finger out and
+                get an actual camera.
+                I use a Canon EOS Rebel T7 DSLR mount with an EF-S 18-55mm and an EF-S 55-250mm. Life gets in the way
+                but I try to get out and shoot as much as I can. A dream of mine is to be able to sell my photos as
+                prints, cards, magnets et cetera so I can share my art with others. Below are a selection of my
+                favorites, go check em out.
+            </p>
+            <button onclick="goHome()">⬅ Back Home</button>
             <div id="PhotoGallery">
                 <div class="vertical">
                     <img src="images/1.jpg">
@@ -135,6 +150,10 @@
             });
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

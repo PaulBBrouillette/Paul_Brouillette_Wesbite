@@ -1,7 +1,37 @@
+ :root {
+   --Charcoal: #373F51;
+   --LightBlue: #A8DDD9;
+   --Red: #A594F9;
+   --Yellow: #E8C547;
+   --Pink: #DAA49A;
+   --White: #EBEBD3;
+ }
+
  body {
    margin: 0;
    overflow: hidden;
+ }
+
+ h1,
+ h2 {
    font-family: "Borel", sans-serif;
+ }
+
+ p {
+   font-family: "Playwrite DE Grund", cursive;
+   font-size: 24px;
+ }
+
+ h2 {
+   font-size: 7vw;
+   margin: 1px;
+   padding: 1px;
+ }
+
+ h1 {
+   font-size: 3rem;
+   -webkit-background-clip: text;
+   animation: shimmer 3s linear infinite;
  }
 
  .container {
@@ -13,6 +43,24 @@
 
  .transition {
    transition: transform 0.6s ease-in-out;
+ }
+
+ #HomeContent {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   justify-content: space-between;
+ }
+
+ #HomeContentRow {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+
+ #ButtonTop {
+   top: 0;
  }
 
  .panel {
@@ -27,8 +75,8 @@
  .home {
    left: 100vw;
    top: 100vh;
-   background: #222;
-   color: #fff;
+   background: var(--Charcoal);
+   color: var(--White);
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -38,26 +86,63 @@
  .left {
    left: 0;
    top: 100vh;
+   background: var(--Yellow);
  }
 
  .right {
    left: 200vw;
    top: 100vh;
+   background: var(--LightBlue);
  }
 
  .top {
    left: 100vw;
    top: 0;
+   background: var(--Red);
  }
 
  .bottom {
    left: 100vw;
    top: 200vh;
+   background: var(--Pink);
  }
 
  button {
-   padding: 1rem 2rem;
-   margin: 1rem;
-   font-size: 1.2rem;
+   font-family: "Playwrite DE Grund", cursive;
+   box-shadow: -10px 10px 0px 0px rgba(0, 0, 0, 1), 2px -2px 0px 0px rgba(0, 0, 0, 1);
+   background-color: var(--Charcoal);
+   color: #E9AFA3;
+   border: 2px solid #E9AFA3;
+   padding: 12px 24px;
+   margin: 10px 0;
+   font-size: 1.1rem;
+   border-radius: 10px;
    cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+ }
+
+ button:hover {
+   background-color: #232020;
+   transform: translateY(-3px);
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+   ;
+ }
+
+ button:active {
+   transform: translateY(0);
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+ }
+
+ @media (max-width: 768px) {
+   h2 {
+     font-size: 8vw;
+   }
+
+   #HomeContent {
+     flex-direction: column;
+   }
+
+   #HomeContentRow {
+     flex-direction: column;
+   }
  }
